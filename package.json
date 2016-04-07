@@ -1,0 +1,23 @@
+{
+  "name": "twitterbot",
+  "version": "1.0.0",
+  "description": "twitter bot - take one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfaroul/Twitterbot.git"
+  },
+  "author": "rachelle erica faroul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfaroul/Twitterbot/issues"
+  },
+  "homepage": "https://github.com/rfaroul/Twitterbot#readme",
+  "dependencies": {
+    "emojilib": "^2.0.2",
+    "twitter": "^1.2.5"
+  }
+}
