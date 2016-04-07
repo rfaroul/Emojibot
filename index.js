@@ -26,8 +26,9 @@ getFollowers("rachellefaroul", function(error, ids){
 		stream.on("error", function(error) { 
 			console.log(error) 
 		});
+		//what to do when a follower tweets
 		stream.on("data", function(tweet){
 			console.log(tweet.text);
 		});
-	})
+	});
 });
