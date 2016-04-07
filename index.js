@@ -26,9 +26,18 @@ getFollowers("rachellefaroul", function(error, ids){
 		stream.on("error", function(error) { 
 			console.log(error) 
 		});
-		//what to do when a follower tweets
+		//callback function: what to do when a follower tweets
 		stream.on("data", function(tweet){
-			console.log(tweet.text);
+			console.log("actual tweet: ", tweet.text);
+			console.log("user screenname (not the original poster): ", tweet.user.screen_name);
 		});
 	});
 });
+
+//3. what to do when a follower tweets
+// var onTweet = function(tweet){
+// 	console.log(tweet.text);
+// 	var split = tweet.text.split(/\b/);
+// 	var converted = split.map(emojify).join("");
+// 	console.log(converted);
+// }
