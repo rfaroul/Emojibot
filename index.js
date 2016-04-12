@@ -15,13 +15,18 @@ function botInit(){
 	client.post("statuses/retweet/" + tweetId, botInitiated);
 	function botInitiated(error, data, response){
 		if (error) {
-			console.log('Bot could not be initiated. Error : ', error);
-			//console.log("error", error);
+			console.log('Bot could not be initiated. Error : ', error); //runs after the botRetweet function runs
+			console.log("error", error);
 		}
 		else {
   			console.log('Bot initiated: ' + tweetId);
 		}
 	}
+	botRetweet();
+};
+
+function botRetweet(){ //runs before botInitiated runs. see this before the error
+	console.log("retweet the bot");
 };
 
 // var getFollowers = function(name, callback){
