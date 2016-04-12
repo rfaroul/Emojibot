@@ -15,7 +15,8 @@ function botInit(){
 	client.post("statuses/retweet/" + tweetId, botInitiated);
 	function botInitiated(error, data, response){
 		if (error) {
-			console.log('Bot could not be initiated. Error : ' + error);
+			console.log('Bot could not be initiated. Error : ', error);
+			//console.log("error", error);
 		}
 		else {
   			console.log('Bot initiated: ' + tweetId);
@@ -43,6 +44,7 @@ function botInit(){
 // 		});
 // 		//callback function: what to do when a follower tweets
 // 		stream.on("data", onTweet);
+		
 // 	});
 // });
 
@@ -64,6 +66,8 @@ function botInit(){
 	//instead of console.log, want to post
 
 botInit();
+
+
 
 
 
