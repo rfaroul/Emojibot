@@ -1,10 +1,13 @@
 var emoji = require("emojilib").lib; //requiring from npm
-
+//console.log("EMOJI", emoji);
+//EMOJI is an object of objects
 var lookup = {};
 for (var key in emoji) {
   emoji[key].keywords.forEach(function(keyword) {
     if (!lookup[keyword]) lookup[keyword] = [];
     lookup[keyword].push(key);
+    //console.log("LOOKUP", lookup);
+    //LOOKUP is an object
   });
 };
 
