@@ -20,7 +20,7 @@ var getFollowers = function(name, getFollowers){
 };
 
 //3. what to do when a follower tweets
-var onTweet = function(tweet, postEmoji){
+var onTweet = function(tweet){
 	console.log("user screenname (not the original poster): ", tweet.user.screen_name);
 	// console.log("tweet object", tweet);
 	console.log("tweet id", tweet.id);
@@ -29,9 +29,12 @@ var onTweet = function(tweet, postEmoji){
 	var converted = split.map(emojify).join("");
 	console.log("SOON-TO-BE STATUS: ", converted);	
 	//then post the converted tweet
-	client.post("statuses/update", {status: converted}, postEmoji);
-
-	// postEmoji();
+	client.post("statuses/update", {status: converted}, function(error, tweet, response){
+		if(!error){
+			console.log("IT WORKS!");
+			console.log(tweet);
+		}
+	});
 };
 
 //STREAM API
@@ -46,19 +49,17 @@ getFollowers("rachellefaroul", function(error, ids){ //now that you've gotten a 
 
 // 4. On data, reply to tweets matching a given phrase with statuses/update
 	//if converted includes keywords "x" and "y", retweet converted
-// var postEmoji = function(status){
-// 	console.log("posting emoji");
-// 	client.post("statuses/update", {status: converted}, function(error, tweet, response){
-// 		if(!error){
-// 			console.log(tweet);
-// 		}
-// 	});
+// var postEmoji = function(error, tweet, response){
+// 	// if(!error){
+// 	// 	console.log(tweet);
+// 	// }
+// 	if (error){
+// 		console.log("bot could not post tweet " + error);
+// 	}
+// 	else{
+// 		console.log(tweet);
+// 	}
 // };
-var postEmoji = function(error, tweet, response){
-	if(!error){
-		console.log(tweet);
-	}
-};
 
 
 
