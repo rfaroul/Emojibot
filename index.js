@@ -47,19 +47,8 @@ getFollowers("rachellefaroul", function(error, ids){ //now that you've gotten a 
 	});
 });
 
-// 4. On data, reply to tweets matching a given phrase with statuses/update
-	//if converted includes keywords "x" and "y", retweet converted
-// var postEmoji = function(error, tweet, response){
-// 	// if(!error){
-// 	// 	console.log(tweet);
-// 	// }
-// 	if (error){
-// 		console.log("bot could not post tweet " + error);
-// 	}
-// 	else{
-// 		console.log(tweet);
-// 	}
-// };
+
+
 
 
 
